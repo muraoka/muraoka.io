@@ -5,5 +5,16 @@ module.exports = {
     description: 'I’m Taiga Muraoka: a developer.',
     twitterUserName: '@muraoka__',
   },
-  plugins: ['gatsby-plugin-typescript', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-emotion',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Noto Sans JP'],
+        display: 'swap',
+      },
+    },
+  ],
 };
