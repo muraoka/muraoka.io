@@ -1,8 +1,10 @@
 import React from 'react';
+import Head from '../components/head';
 
 const Index = () => {
   return (
     <main>
+      <Head />
       <h1>muraoka.io</h1>
       <p>
         <strong>GitHub</strong> :{' '}
