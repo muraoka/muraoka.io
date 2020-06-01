@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         body {
           background: #f5f3f0;
           color: #080a11;
-          font-family: 'Noto Sans JP', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue,
+            Segoe UI, Hiragino Kaku Gothic ProN, Hiragino Sans,
+            ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, sans-serif;
         }
       `}</style>
     </>
