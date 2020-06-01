@@ -27,10 +27,12 @@ const Index: NextPage = () => {
       <style jsx>{`
         h1 {
           font-size: 2rem;
-          margin-bottom: 1rem;
+          font-weight: 600;
+          margin-bottom: 1.2rem;
         }
         p {
-          margin-bottom: 0.4rem;
+          font-size: 1rem;
+          margin-bottom: 0.6rem;
         }
       `}</style>
     </>
