@@ -5,6 +5,7 @@ import Layout from '../components/layouts';
 import { getAllPosts } from '../lib/api';
 import { Posts } from '../interfaces/post';
 import PostList from '../components/postList';
+import Header from '../components/header';
 
 type Props = { allPosts: Posts };
 const Index: NextPage<Props> = ({ allPosts }) => {
@@ -14,17 +15,9 @@ const Index: NextPage<Props> = ({ allPosts }) => {
         <Head>
           <title>muraoka.io</title>
         </Head>
-        <h1>muraoka.io</h1>
+        <Header />
         <PostList posts={allPosts} />
       </Layout>
-
-      <style jsx>{`
-        h1 {
-          font-size: 2rem;
-          font-weight: 600;
-          margin-bottom: 2rem;
-        }
-      `}</style>
     </>
   );
 };
