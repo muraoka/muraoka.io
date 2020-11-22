@@ -1,8 +1,13 @@
+import React from 'react';
+import { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Layout from '../components/layouts';
-import { NextPage } from 'next';
+import { getAllPosts } from '../lib/api';
+import { Posts } from '../interfaces/post';
+import PostList from '../components/postList';
 
-const Index: NextPage = () => {
+type Props = { allPosts: Posts };
+const Index: NextPage<Props> = ({ allPosts }) => {
   return (
     <>
       <Layout>
@@ -10,33 +15,25 @@ const Index: NextPage = () => {
           <title>muraoka.io</title>
         </Head>
         <h1>muraoka.io</h1>
-        <div>
-          <p>
-            GitHub : <a href="https://github.com/muraoka">muraoka</a>
-          </p>
-          <p>
-            Twitter : <a href="https://twitter.com/muraoka_jp">muraoka_jp</a>
-          </p>
-          <p>
-            Scrapbox :{' '}
-            <a href="https://scrapbox.io/muraokajp/">muraokaのScrapbox</a>
-          </p>
-          <p>Mail : taigamuraoka1998@gmail.com</p>
-        </div>
+        <PostList posts={allPosts} />
       </Layout>
+
       <style jsx>{`
         h1 {
           font-size: 2rem;
           font-weight: 600;
-          margin-bottom: 1.2rem;
-        }
-        p {
-          font-size: 1rem;
-          margin-bottom: 0.6rem;
+          margin-bottom: 2rem;
         }
       `}</style>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPosts = getAllPosts();
+  return {
+    props: { allPosts },
+  };
 };
 
 export default Index;
