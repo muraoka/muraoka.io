@@ -1,13 +1,13 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { Post, Posts } from '../interfaces/post';
+import { Article, Articles } from '../interfaces/article';
 import { markdownToHTML } from '../lib/markdownToHtml';
 
-const postsDirectory = join(process.cwd(), 'posts');
+const articlesDirectory = join(process.cwd(), 'articles');
 
-export function getPostBySlug(slug: string): Post {
-  const fullPath = join(postsDirectory, `${slug}.md`);
+export function getArticleBySlug(slug: string): Article {
+  const fullPath = join(articlesDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
   const htmlContent = markdownToHTML(content);
@@ -20,12 +20,12 @@ export function getPostBySlug(slug: string): Post {
   };
 }
 
-export function getAllPosts(): Posts {
+export function getAllArticles(): Articles {
   const slugs = fs
-    .readdirSync(postsDirectory)
+    .readdirSync(articlesDirectory)
     .map((file) => file.replace(/\.md$/, ''));
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
+  const articles = slugs
+    .map((slug) => getArticleBySlug(slug))
     .sort((a, b) => (a.date < b.date ? 1 : -1));
-  return posts;
+  return articles;
 }

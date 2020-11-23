@@ -1,8 +1,8 @@
-export type Post = {
+export type Article = {
   slug: string;
   date: string;
   title: string;
   content: string;
 };
 
-export type Posts = Post[];
+export type Articles = Article[];

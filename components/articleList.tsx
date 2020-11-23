@@ -1,17 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { join } from 'path';
-import { Posts } from '../interfaces/post';
+import { Articles } from '../interfaces/article';
 
-type Props = { posts: Posts };
-const PostList: React.FC<Props> = ({ posts }) => (
+type Props = { articles: Articles };
+const ArticleList: React.FC<Props> = ({ articles }) => (
   <>
-    {posts.map((post, index) => (
+    {articles.map((article, index) => (
       <li key={index}>
-        <p className="date">{post.date}</p>
-        <p className="post">
-          <Link href={join('posts', post.slug)}>
-            <a>{post.title}</a>
+        <p className="date">{article.date}</p>
+        <p className="article">
+          <Link href={join('articles', article.slug)}>
+            <a>{article.title}</a>
           </Link>
         </p>
       </li>
@@ -26,11 +26,11 @@ const PostList: React.FC<Props> = ({ posts }) => (
         font-size: 1rem;
         padding-bottom: 0.1rem;
       }
-      .post {
+      .article {
         font-size: 1.15rem;
       }
     `}</style>
   </>
 );
 
-export default PostList;
+export default ArticleList;

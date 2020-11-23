@@ -1,12 +1,12 @@
 import React from 'react';
-import { Post } from '../interfaces/post';
+import { Article } from '../interfaces/article';
 
-type Props = { post: Post };
-const PostHeader: React.FC<Props> = ({ post }) => {
+type Props = { article: Article };
+const ArticleHeader: React.FC<Props> = ({ article }) => {
   return (
     <>
-      <p>{post.date}</p>
-      <h1>{post.title}</h1>
+      <p>{article.date}</p>
+      <h1>{article.title}</h1>
       <style jsx>{`
         p {
           font-size: 1rem;
@@ -21,4 +21,4 @@ const PostHeader: React.FC<Props> = ({ post }) => {
   );
 };
 
-export default PostHeader;
+export default ArticleHeader;
