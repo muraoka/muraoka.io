@@ -8,7 +8,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         div {
           margin: 2rem auto;
           padding: 0 2rem;
-          max-width: 800px;
+          max-width: 600px;
         }
       `}</style>
     </>

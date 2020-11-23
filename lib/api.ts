@@ -2,6 +2,7 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { Post, Posts } from '../interfaces/post';
+import { markdownToHTML } from '../lib/markdownToHtml';
 
 const postsDirectory = join(process.cwd(), 'posts');
 
@@ -9,11 +10,13 @@ export function getPostBySlug(slug: string): Post {
   const fullPath = join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
+  const htmlContent = markdownToHTML(content);
 
   return {
+    slug: slug,
     date: slug,
     title: data.title,
-    content: content,
+    content: htmlContent,
   };
 }
 

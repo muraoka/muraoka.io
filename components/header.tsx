@@ -1,18 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
 
 const Header: React.FC = () => {
+  const router = useRouter();
+  const Tag = router.pathname === '/' ? 'h1' : 'p';
   return (
     <>
-      <h1>
+      <Tag>
         <Link href="/">
           <a>muraoka.io</a>
         </Link>
-      </h1>
+      </Tag>
 
       <style jsx>{`
-        h1 {
-          font-size: 2rem;
+        ${Tag} {
+          font-size: 1.5rem;
           font-weight: 600;
           margin-bottom: 2rem;
         }

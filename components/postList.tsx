@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { join } from 'path';
 import { Posts } from '../interfaces/post';
 
 type Props = { posts: Posts };
@@ -7,7 +9,11 @@ const PostList: React.FC<Props> = ({ posts }) => (
     {posts.map((post, index) => (
       <li key={index}>
         <p className="date">{post.date}</p>
-        <p className="post">{post.title}</p>
+        <p className="post">
+          <Link href={join('posts', post.slug)}>
+            <a>{post.title}</a>
+          </Link>
+        </p>
       </li>
     ))}
 
