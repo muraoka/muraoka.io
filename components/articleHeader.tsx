@@ -14,7 +14,7 @@ const ArticleHeader: React.FC<Props> = ({ article }) => {
         }
         h1 {
           font-size: 2rem;
-          margin-bottom: 1rem;
+          padding-bottom: 1rem;
         }
       `}</style>
     </>

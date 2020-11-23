@@ -45,6 +45,7 @@ const Header: React.FC = () => {
         }
         div > p {
           padding-left: 10px;
+          font-size: 1rem;
         }
         a {
           color: #222;

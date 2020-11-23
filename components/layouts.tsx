@@ -6,9 +6,9 @@ function Layout({ children }: { children: React.ReactNode }) {
       <div>{children}</div>
       <style jsx>{`
         div {
-          margin: 2rem auto;
-          padding: 0 2rem;
-          max-width: 600px;
+          margin: 1.5rem auto;
+          padding: 0 1rem;
+          max-width: 640px;
         }
       `}</style>
     </>

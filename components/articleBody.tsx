@@ -8,7 +8,7 @@ const ArticleBody: React.FC<Props> = ({ body }) => {
       <style jsx>{`
         .content :global(p) {
           font-size: 1.15rem;
-          margin-bottom: 2rem;
+          padding-bottom: 1rem;
         }
       `}</style>
     </>
